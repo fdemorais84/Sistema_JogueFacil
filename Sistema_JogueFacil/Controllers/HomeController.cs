@@ -42,23 +42,23 @@ namespace Sistema_JogueFacil.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Login(TB_LOGIN login)
+        public ActionResult Login(Usuario u)
         {
             // esta action trata o post (login)
             if (ModelState.IsValid) //verifica se é válido
             {
-                using (Login dc = new Login())
+                using (CadastroEntities dc = new CadastroEntities())
                 {
-                    var v = dc.TB_LOGIN.Where(a => a.USUARIO.Equals(login.USUARIO) && a.SENHA.Equals(login.SENHA)).FirstOrDefault();
+                    var v = dc.Usuarios.Where(a => a.NOME_USUARIO.Equals(u.NOME_USUARIO) && a.SENHA.Equals(u.SENHA)).FirstOrDefault();
                     if (v != null)
                     {
                         Session["usuarioLogadoID"] = v.ID.ToString();
-                        Session["nomeUsuarioLogado"] = v.USUARIO.ToString();
+                        Session["nomeUsuarioLogado"] = v.NOME_USUARIO.ToString();
                         return RedirectToAction("Index");
                     }
                 }
             }
-            return View(login);
+            return View(u);
         }
     }
 }

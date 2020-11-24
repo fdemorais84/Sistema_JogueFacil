@@ -1,9 +1,7 @@
-﻿@model Sistema_JogueFacil.Models.TB_LOGIN
-
+﻿@model Sistema_JogueFacil.Models.Usuario
 @{
     ViewBag.Title = "Login";
 }
-
 <h2>Login</h2>
 @using (Html.BeginForm("Login", "Home", FormMethod.Post))
 {
@@ -18,9 +16,9 @@
     }
     <table>
         <tr>
-            <td>@Html.LabelFor(a => a.USUARIO)</td>
-            <td>@Html.TextBoxFor(a => a.USUARIO)</td>
-            <td>@Html.ValidationMessageFor(a => a.USUARIO)</td>
+            <td>@Html.LabelFor(a => a.NOME_USUARIO)</td>
+            <td>@Html.TextBoxFor(a => a.NOME_USUARIO)</td>
+            <td>@Html.ValidationMessageFor(a => a.NOME_USUARIO)</td>
         </tr>
         <tr>
             <td> @Html.LabelFor(a => a.SENHA)</td>
