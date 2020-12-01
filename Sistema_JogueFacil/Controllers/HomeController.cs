@@ -47,13 +47,13 @@ namespace Sistema_JogueFacil.Controllers
             // esta action trata o post (login)
             if (ModelState.IsValid) //verifica se é válido
             {
-                using (CadastroEntities dc = new CadastroEntities())
+                using (ContextEntities dc = new ContextEntities())
                 {
-                    var v = dc.Usuarios.Where(a => a.NOME_USUARIO.Equals(u.NOME_USUARIO) && a.SENHA.Equals(u.SENHA)).FirstOrDefault();
+                    var v = dc.Usuarios.Where(a => a.Nome_usuario.Equals(u.Nome_usuario) && a.Senha.Equals(u.Senha)).FirstOrDefault();
                     if (v != null)
                     {
-                        Session["usuarioLogadoID"] = v.ID.ToString();
-                        Session["nomeUsuarioLogado"] = v.NOME_USUARIO.ToString();
+                        Session["usuarioLogadoID"] = v.Id.ToString();
+                        Session["nomeUsuarioLogado"] = v.Nome_usuario.ToString();
                         return RedirectToAction("Index");
                     }
                 }

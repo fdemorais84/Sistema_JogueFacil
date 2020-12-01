@@ -128,28 +128,21 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Command\CommandBuscar.cs" />
+    <Compile Include="Command\ICommand.cs" />
+    <Compile Include="Controllers\AbstractController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Cadastro.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Cadastro.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Cadastro.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Cadastro.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Cadastro.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Cadastro.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Usuario.cs">
-      <DependentUpon>Cadastro.tt</DependentUpon>
-    </Compile>
+    <Compile Include="Models\Cidade.cs" />
+    <Compile Include="Models\Cliente.cs" />
+    <Compile Include="Models\Compra.cs" />
+    <Compile Include="Models\Endereco.cs" />
+    <Compile Include="Models\EntidadeDominio.cs" />
+    <Compile Include="Models\Estado.cs" />
+    <Compile Include="Models\Jogo.cs" />
+    <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -161,25 +154,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Models\Cadastro.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Cadastro.edmx</DependentUpon>
-      <LastGenOutput>Cadastro.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\Cadastro.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Cadastro.edmx</DependentUpon>
-      <LastGenOutput>Cadastro.cs</LastGenOutput>
-    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <EntityDeploy Include="Models\Cadastro.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Cadastro.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\Cadastro.edmx.diagram">
-      <DependentUpon>Cadastro.edmx</DependentUpon>
-    </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -209,6 +185,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Abstract\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
